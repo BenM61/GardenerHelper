@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_background"
+    tools:context=".HelpActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRecycleViewExplanationVer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRecycleViewExplanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glNewPlant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <ImageView
+        android:id="@+id/imHelpHelp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/glHelp"
+        app:layout_constraintEnd_toStartOf="@+id/glVer"
+        app:srcCompat="@drawable/help" />
+
+    <TextView
+        android:id="@+id/tvHelpExplanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Help:\nStarts help menu :)"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/glHelp"
+        app:layout_constraintStart_toStartOf="@+id/glVer" />
+
+    <ImageView
+        android:id="@+id/imHelpRefresh"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/glRefresh"
+        app:layout_constraintEnd_toStartOf="@+id/glVer"
+        app:srcCompat="@drawable/restart" />
+
+    <TextView
+        android:id="@+id/tvRefreshExplanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh:\nThe number of remaining days\nupdates every time you start the\n app or press refresh."
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/glRefresh"
+        app:layout_constraintStart_toStartOf="@+id/glVer" />
+
+    <ImageView
+        android:id="@+id/imHelpNewPlant"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/glNewPlant"
+        app:layout_constraintEnd_toStartOf="@+id/glVer"
+        app:srcCompat="@drawable/plus_sign" />
+
+    <TextView
+        android:id="@+id/tvNewPlantExplanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add new plant:\nStart the adding plant process."
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/glNewPlant"
+        app:layout_constraintStart_toStartOf="@+id/glVer" />
+
+    <TextView
+        android:id="@+id/tvRecycleViewExplanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="General app explanation:\nTap on plant: Waters it (reset timer)\nLong tap on plant: Enters edit mode."
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/glRecycleViewExplanation"
+        app:layout_constraintStart_toStartOf="@+id/glRecycleViewExplanationVer" />
+</androidx.constraintlayout.widget.ConstraintLayout>

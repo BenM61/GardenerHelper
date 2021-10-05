@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imRefresh"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:onClick="updateDate"
+        app:layout_constraintEnd_toStartOf="@+id/imHelp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/restart" />
+
+    <ImageView
+        android:id="@+id/imNewPlant"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:onClick="addPlant"
+        app:layout_constraintEnd_toStartOf="@+id/imRefresh"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_sign" />
+
+    <ImageView
+        android:id="@+id/imHelp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="7dp"
+        android:onClick="displayHelp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/help" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="serif"
+        android:text="Gardener's Helper"
+        android:textColor="@color/dark_gray"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/imNewPlant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPlantAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="serif"
+        android:text="TOTAL PLANTS: 10"
+        android:textColor="@color/dark_gray"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlantAmount" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

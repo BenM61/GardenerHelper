@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/plantInfoLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlantInfoActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVerLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVerRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glVerMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name (Optional):"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/etName"
+        app:layout_constraintBottom_toBottomOf="@id/glHorTop"
+        app:layout_constraintEnd_toStartOf="@id/glVerMiddle" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/glHorTop"
+        app:layout_constraintStart_toEndOf="@id/glVerMiddle" />
+
+
+    <TextView
+        android:id="@+id/tvDaysUntilWatering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Days Until Watering:"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/etDaysUntilWatering"
+        app:layout_constraintBottom_toBottomOf="@id/glHorMiddle"
+        app:layout_constraintEnd_toStartOf="@id/glVerMiddle" />
+
+
+    <EditText
+        android:id="@+id/etDaysUntilWatering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="7"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/glHorMiddle"
+        app:layout_constraintStart_toStartOf="@id/glVerMiddle" />
+
+    <TextView
+        android:id="@+id/tvRemainingDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Days Remaining:"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@id/etRemainingDays"
+        app:layout_constraintBottom_toBottomOf="@id/glHorBottom"
+        app:layout_constraintEnd_toStartOf="@id/glVerMiddle" />
+
+
+    <EditText
+        android:id="@+id/etRemainingDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberSigned"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/glHorBottom"
+        app:layout_constraintStart_toStartOf="@id/glVerMiddle" />
+
+    <Button
+        android:id="@+id/bSavePlant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:onClick="savePlantDetails"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/glButtons" />
+
+    <ImageView
+        android:id="@+id/imPlantImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:onClick="startCamera"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/etName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:onClick="deletePlantDetails"
+        android:text="Delete"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/glVerRight"
+        app:layout_constraintTop_toTopOf="@id/glButtons" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
